@@ -1,36 +1,36 @@
-The academic schedule and faculty details for the Department of CSE - Artificial Intelligence & Machine Learning (II B.Tech, Section C, Academic Year 2024-25) are outlined as follows:
+VVIT Department of CSE - Artificial Intelligence & Machine Learning
+Academic Year: 2024-25
+Semester: II
+Room No: N-403
+Class Teacher: Dr. T. Kameswara Rao
+Section: C
+R20 Regulation
+
 
 Faculty Details
 The faculty members and their contact numbers for various subjects are:
 
 Deep Learning (DL) and Deep Learning Lab (DL Lab): Mr. M. Pardha Saradhi (9492787518)
+
 Design and Analysis of Algorithms (DAA) and Full Stack Lab (FSD Lab): Mrs. N. Nalini Krupa (8331980551)
+
 Engineering Economics & Management (EEM): Dr. Md. Farooqui (9885060475)
+
 Entrepreneurial Skill Development (ESD): Mr. Md. Sayeed (7416152261)
+
 Natural Language Processing (NLP): Dr. V. Muralidhar (6303956756)
+
 Introduction to IoT (IOT): Mrs. K. Spandana (8185037676)
+
 Cloud Computing Lab (CC Lab): Dr. T. Kameswara Rao (9704256258)
+
 Soft Skills: Mr. M. Krishna / Dr. U. Madhav (8897899588)
 
 
-Class Schedule
-The weekly timetable runs from Monday to Saturday, with classes held in Room N-403 and labs in Room N-416.
-
-Monday:
-
-Subjects include IoT, DAA, EEM, NLP, and Embedded Systems Design (EEP), along with the DL Lab from 10:10 AM to 12:10 PM. Faculty members involved are Mrs. K. Spandana, Mrs. N. Nalini Krupa, Dr. Md. Farooqui, Dr. V. Muralidhar, and Dr. T. Kameswara Rao.
-Tuesday:
-
-The schedule includes Soft Skills, DL, EEM, NLP, and EEP, with a Cloud Computing Lab from 10:10 AM to 12:10 PM. Faculty members teaching are Mr. M. Krishna/Dr. U. Madhav, Mr. M. Pardha Saradhi, Dr. Md. Farooqui, Dr. V. Muralidhar, and Dr. T. Kameswara Rao.
-Wednesday:
-
-Classes include FSD Lab, EEM, IoT, NLP, and EEP. The EEM class extends for two hours from 10:10 AM to 12:10 PM. Faculty involved are Mrs. N. Nalini Krupa, Dr. Md. Farooqui, Mrs. K. Spandana, Dr. V. Muralidhar, and Dr. T. Kameswara Rao.
-Thursday:
-
-Subjects covered are EEM, IoT, DAA, ESD, DL, and EEP. Faculty members include Dr. Md. Farooqui, Mrs. K. Spandana, Mrs. N. Nalini Krupa, Mr. Md. Sayeed, Mr. M. Pardha Saradhi, and Dr. T. Kameswara Rao.
-Friday:
-
-Classes include NLP, DAA, EEM, ESD, DL, and a session for clubs or activities in the afternoon. Faculty involved are Dr. V. Muralidhar, Mrs. N. Nalini Krupa, Dr. Md. Farooqui, Mr. Md. Sayeed, and Mr. M. Pardha Saradhi.
-Saturday:
-
-Subjects include DAA, IoT, NLP, EEM, and a Counseling Session with Dr. T. Kameswara Rao. Faculty members involved are Mrs. N. Nalini Krupa, Mrs. K. Spandana, Dr. V. Muralidhar, and Dr. Md. Farooqui.
+Class Schedule:
+Monday: The day begins with IOT (8:20-9:15), followed by DAA (9:15-10:10). After the break, there's DL LAB in N-416 (10:20-11:15). Following lunch break from 12:10-12:50, students have EEM (12:50-1:40) and NLP (1:40-2:25). The day concludes with EEP (3:25-3:55).
+Tuesday: The day starts with SOFT SKILLS (8:20-10:10), followed by BREAK. Then there's DL (10:20-11:15) and IOT (11:15-12:10). Post lunch, students attend CC LAB in N-416 (12:50-2:25), followed by BREAK (2:25-3:25) and EEP (3:25-3:55).
+Wednesday: Students begin with FSD LAB in N-416 (8:20-10:10), followed by BREAK. EEM (10:20-11:15) and NLP (11:15-12:10) follow. After lunch, they have DL and IOT (12:50-2:25), BREAK (2:25-3:25), and end with EEP (3:25-3:55).
+Thursday: The schedule starts with EEM (8:20-9:15) and NLP (9:15-10:10), followed by BREAK. Then IOT (10:20-11:15) and DAA (11:15-12:10). Post lunch, there's ESD and DL (12:50-2:25), BREAK (2:25-3:25), and EEP (3:25-3:55).
+Friday: The day begins with NLP (8:20-9:15) and DAA (9:15-10:10), followed by BREAK. Then EEM (10:20-11:15) and DL (11:15-12:10). After lunch, students have ESD and DAA (12:50-2:25), followed by CLUBS activities (2:25-3:55).
+Saturday: Classes start with DL (8:20-9:15) and IOT (9:15-10:10), followed by NLP and DAA (10:20-12:10). Post lunch, there's COUNSELLING and EEM (12:50-2:25), and the day ends with EEP (2:25-3:55).

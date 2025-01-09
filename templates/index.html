@@ -5,24 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSM Query Application</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Add highlight.js for code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <!-- Add marked library for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
     <style>
-        /* Previous styles remain the same until .response-content */
         :root {
-            --primary-red: #ffeded;
-            --primary-red-hover: #ffe0e0;
-            --accent-red: #ff4444;
-            --text-black: #000000;
-            --text-gray: #4a4a4a;
-            --white: #ffffff;
-            --border-light: #f0f0f0;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --primary-dark: #1e1e1e;
+            --primary-dark-hover: #2a2a2a;
+            --accent-dark: #ff4444;
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+            --border-dark: #3a3a3a;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.7);
             --transition: all 0.3s ease;
         }
 
@@ -30,12 +26,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Helvetica', sans-serif;
         }
 
         body {
-            background-color: var(--primary-red);
-            color: var(--text-black);
+            background-color: var(--primary-dark);
+            color: var(--text-white);
         }
 
         .container {
@@ -45,9 +41,9 @@
 
         .sidebar {
             width: 280px;
-            background-color: var(--white);
+            background-color: var(--primary-dark-hover);
             padding: 2rem;
-            border-right: 1px solid var(--border-light);
+            border-right: 1px solid var(--border-dark);
             box-shadow: var(--shadow-sm);
         }
 
@@ -67,7 +63,7 @@
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            color: var(--text-black);
+            color: var(--text-white);
             letter-spacing: -0.5px;
         }
 
@@ -80,86 +76,101 @@
         .chat-container {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 1.5rem;
             margin-bottom: 7rem;
+            padding-bottom: 2rem;
         }
 
-        .response-section {
-            background-color: var(--white);
-            border-radius: 1.25rem;
-            padding: 2rem;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
+        .message {
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
         }
 
-        .response-section:hover {
-            box-shadow: var(--shadow-lg);
+        .message-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
         }
 
-        /* Updated response-content styles */
-        .response-content {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-black);
-            font-weight: 450;
+        .message-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--accent-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
         }
 
-        /* Add styles for markdown content */
-        .response-content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            background-color: var(--white);
+        .user-message {
+            align-items: flex-end;
+        }
+
+        .assistant-message {
+            align-items: flex-start;
+        }
+
+        .message-content {
+            background-color: var(--primary-dark-hover);
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            max-width: 85%;
             box-shadow: var(--shadow-sm);
         }
 
-        .response-content th,
-        .response-content td {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-light);
-            text-align: left;
+        .user-message .message-content {
+            background-color: var(--accent-dark);
         }
 
-        .response-content th {
-            background-color: var(--primary-red);
-            font-weight: 600;
-        }
-
-        .response-content tr:nth-child(even) {
-            background-color: var(--primary-red);
-        }
-
-        .response-content code {
-            font-family: 'Consolas', 'Monaco', monospace;
-            padding: 0.2em 0.4em;
-            background-color: var(--primary-red);
-            border-radius: 0.3em;
-            font-size: 0.9em;
-        }
-
-        .response-content pre {
-            background-color: var(--primary-red);
+        .message-content pre {
+            background-color: var(--primary-dark);
             padding: 1rem;
             border-radius: 0.5rem;
             overflow-x: auto;
             margin: 1rem 0;
         }
 
-        .response-content pre code {
-            background-color: transparent;
-            padding: 0;
-            border-radius: 0;
+        .message-content code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            padding: 0.2em 0.4em;
+            background-color: var(--primary-dark);
+            border-radius: 0.3em;
+            font-size: 0.9em;
         }
 
-        /* Rest of the previous styles */
+        .message-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background-color: var (--primary-dark-hover);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .message-content th,
+        .message-content td {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-dark);
+            text-align: left;
+        }
+
+        .message-content th {
+            background-color: var(--primary-dark);
+            font-weight: 600;
+        }
+
         .input-section {
             position: fixed;
             bottom: 0;
             left: 280px;
             right: 0;
-            background-color: var(--white);
-            padding: 2rem;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+            background-color: var(--primary-dark);
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-dark);
         }
 
         .textarea-wrapper {
@@ -174,12 +185,12 @@
             max-height: 200px;
             padding: 1.25rem;
             padding-right: 4rem;
-            border: 2px solid var(--border-light);
+            border: 2px solid var(--border-dark);
             border-radius: 1rem;
             font-size: 1.1rem;
             line-height: 1.5;
-            color: var(--text-black);
-            background-color: var(--white);
+            color: var(--text-white);
+            background-color: var(--primary-dark-hover);
             resize: none;
             transition: var(--transition);
             box-shadow: var(--shadow-sm);
@@ -188,7 +199,7 @@
 
         textarea:focus {
             outline: none;
-            border-color: var(--accent-red);
+            border-color: var(--accent-dark);
             box-shadow: 0 0 0 4px rgba(255, 68, 68, 0.1);
         }
 
@@ -196,9 +207,9 @@
             position: absolute;
             right: 1rem;
             bottom: 1rem;
-            background: var(--accent-red);
+            background: var(--accent-dark);
             border: none;
-            color: var(--white);
+            color: var(--text-white);
             cursor: pointer;
             padding: 0.75rem;
             border-radius: 0.75rem;
@@ -210,18 +221,10 @@
             background-color: #ff3333;
         }
 
-        .controls {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--border-light);
-        }
-
         .control-button {
-            background: var(--primary-red);
+            background: var(--primary-dark-hover);
             border: none;
-            color: var(--text-black);
+            color: var(--text-white);
             padding: 0.75rem 1rem;
             border-radius: 0.75rem;
             cursor: pointer;
@@ -230,31 +233,11 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            width: 100%;
         }
 
         .control-button:hover {
-            background-color: var(--primary-red-hover);
-        }
-
-        .loading {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 2rem;
-        }
-
-        .loading.active {
-            display: flex;
-        }
-
-        .spinner {
-            width: 28px;
-            height: 28px;
-            border: 3px solid rgba(255, 68, 68, 0.1);
-            border-top-color: var(--accent-red);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+            background-color: var(--accent-dark);
         }
 
         .toast {
@@ -262,8 +245,8 @@
             bottom: 2rem;
             right: 2rem;
             padding: 1rem 2rem;
-            background-color: var(--text-black);
-            color: var(--white);
+            background-color: var(--primary-dark-hover);
+            color: var(--text-white);
             border-radius: 1rem;
             box-shadow: var(--shadow-lg);
             opacity: 0;
@@ -275,10 +258,6 @@
         .toast.show {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
 
         @media (max-width: 768px) {
@@ -298,15 +277,42 @@
                 font-size: 2rem;
             }
         }
+
+        .conversation-list {
+            margin-top: 2rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .conversation-list li {
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .conversation-list li:hover {
+            background-color: var(--accent-dark);
+        }
+
+        .conversation-list li.active {
+            background-color: var(--accent-dark);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
-            <button class="control-button">
-                <i class="fas fa-home"></i>
-                Dashboard
+            <button class="control-button" onclick="newConversation()">
+                <i class="fas fa-plus"></i>
+                New Conversation
             </button>
+            <ul class="conversation-list" id="conversationList">
+                <!-- Conversations will be listed here -->
+            </ul>
         </aside>
 
         <div class="main-content">
@@ -315,20 +321,8 @@
                 <p>Get instant AI-powered insights and answers</p>
             </header>
 
-            <div class="chat-container">
-                <div class="response-section">
-                    <div class="response-content" id="responseText">Ask your question below to get started...</div>
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        <p>Processing your request...</p>
-                    </div>
-                    <div class="controls">
-                        <button class="control-button" onclick="copyResponse()">
-                            <i class="fas fa-copy"></i>
-                            Copy Response
-                        </button>
-                    </div>
-                </div>
+            <div class="chat-container" id="chatContainer">
+                <!-- Chat messages will be inserted here -->
             </div>
         </div>
 
@@ -351,7 +345,9 @@
     <div class="toast" id="toast"></div>
 
     <script>
-        // Configure marked options
+        let conversations = [];
+        let currentConversationIndex = null;
+
         marked.setOptions({
             highlight: function(code, lang) {
                 if (lang && hljs.getLanguage(lang)) {
@@ -363,13 +359,44 @@
             gfm: true
         });
 
-        // Auto-resize textarea
+        function addMessage(content, isUser = false) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'assistant-message'}`;
+            
+            const messageHeader = document.createElement('div');
+            messageHeader.className = 'message-header';
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+            
+            const sender = document.createElement('span');
+            sender.textContent = isUser ? 'You' : 'Assistant';
+            
+            messageHeader.appendChild(avatar);
+            messageHeader.appendChild(sender);
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            messageContent.innerHTML = isUser ? content : formatResponse(content);
+            
+            messageDiv.appendChild(messageHeader);
+            messageDiv.appendChild(messageContent);
+            
+            chatContainer.appendChild(messageDiv);
+            messageDiv.scrollIntoView({ behavior: 'smooth' });
+
+            if (currentConversationIndex !== null) {
+                conversations[currentConversationIndex].messages.push({ content, isUser });
+            }
+        }
+
         function autoResize(textarea) {
             textarea.style.height = 'auto';
             textarea.style.height = textarea.scrollHeight + 'px';
         }
 
-        // Toast notification
         function showToast(message, duration = 3000) {
             const toast = document.getElementById('toast');
             toast.textContent = message;
@@ -380,45 +407,23 @@
             }, duration);
         }
 
-        // Copy response
-        function copyResponse() {
-            const responseText = document.getElementById('responseText').textContent;
-            navigator.clipboard.writeText(responseText)
-                .then(() => showToast('Response copied to clipboard!'))
-                .catch(err => showToast('Failed to copy response'));
-        }
-
-        // Format response with markdown
         function formatResponse(text) {
-            // Handle table formatting
-            if (text.includes('|')) {
+            if (text.includes('|') || text.includes('```')) {
                 return marked.parse(text);
             }
-            
-            // Handle code blocks
-            if (text.includes('```')) {
-                return marked.parse(text);
-            }
-            
-            // Regular text
             return text;
         }
 
-        // Send query
         function sendQuery() {
             const textarea = document.getElementById('queryText');
             const queryText = textarea.value.trim();
-            const responseText = document.getElementById('responseText');
-            const loading = document.querySelector('.loading');
 
             if (!queryText) {
                 showToast('Please enter your question first');
                 return;
             }
 
-            // Show loading state
-            responseText.style.opacity = '0.3';
-            loading.classList.add('active');
+            addMessage(queryText, true);
 
             fetch('/query/', {
                 method: 'POST',
@@ -434,34 +439,56 @@
                 return response.json();
             })
             .then(data => {
-                // Format the response with markdown
-                responseText.innerHTML = formatResponse(data.result);
-                // Initialize syntax highlighting for code blocks
-                document.querySelectorAll('pre code').forEach((block) => {
-                    hljs.highlightBlock(block);
-                });
+                addMessage(data.result);
                 textarea.value = '';
                 textarea.style.height = 'auto';
                 showToast('Response received successfully!');
             })
             .catch(error => {
-                responseText.textContent = `Error: ${error.message}`;
+                addMessage(`Error: ${error.message}`);
                 showToast('Failed to get response', 5000);
-            })
-            .finally(() => {
-                // Hide loading state
-                responseText.style.opacity = '1';
-                loading.classList.remove('active');
             });
         }
 
-        // Handle Enter key
+        function newConversation() {
+            const chatContainer = document.getElementById('chatContainer');
+            chatContainer.innerHTML = '';
+            currentConversationIndex = conversations.length;
+            conversations.push({ messages: [] });
+            updateConversationList();
+        }
+
+        function updateConversationList() {
+            const conversationList = document.getElementById('conversationList');
+            conversationList.innerHTML = '';
+            conversations.forEach((conversation, index) => {
+                const li = document.createElement('li');
+                li.textContent = `Conversation ${index + 1}`;
+                li.className = index === currentConversationIndex ? 'active' : '';
+                li.onclick = () => loadConversation(index);
+                conversationList.appendChild(li);
+            });
+        }
+
+        function loadConversation(index) {
+            currentConversationIndex = index;
+            const chatContainer = document.getElementById('chatContainer');
+            chatContainer.innerHTML = '';
+            conversations[index].messages.forEach(message => {
+                addMessage(message.content, message.isUser);
+            });
+            updateConversationList();
+        }
+
         document.getElementById('queryText').addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
                 sendQuery();
             }
         });
+
+        // Initialize with a new conversation
+        newConversation();
     </script>
 </body>
 </html>

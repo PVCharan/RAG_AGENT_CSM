@@ -1,49 +1,63 @@
 Year-3 , Semester-5
 Semester results
 
+
+
+
 Roll Number: 22BQ1A42B9
 Name: PENUMUDI CHETAN MANI KRISHNA
 Summary: Achieved an SGPA of 8.19, with strong grades in practical subjects like UNIX and Shell Programming Lab (A+) and .NET Programming (A+), while Machine Learning had a lower grade of D.
+
 
 Roll Number: 22BQ1A42C0
 Name: PERASOMULA CHANDANA
 Summary: Scored an SGPA of 8.53, excelling in UNIX and Shell Programming Lab (A+), Summer Internship (A+), and Image Processing using Python (A). The lowest grade was C in Machine Learning.
 
+
 Roll Number: 22BQ1A42C1
 Name: PERLI NOEL
 Summary: Achieved an SGPA of 8.44, with strengths in UNIX and Shell Programming Lab (A+) and .NET Programming (A). However, the Machine Learning Lab performance was relatively weaker (B).
+
 
 Roll Number: 22BQ1A42C2
 Name: PISUPATI VEDA RAMA CHARAN
 Summary: Secured an SGPA of 7.98, excelling in UNIX and Shell Programming Lab (A+) and Summer Internship (A+), but consistently scored C in theory and lab subjects like Machine Learning and Artificial Neural Networks.
 
+
 Roll Number: 22BQ1A42D0
 Name: PURNI SUBRAMANYAM
 Summary: Attained an SGPA of 7.91, showcasing excellence in labs and internships (A+) but performed weaker in theory subjects like Machine Learning (D) and Computer Networks (D).
+
 
 Roll Number: 22BQ1A42C3
 Name: PONDURI VENKATA BRAHMA SAI KOWSHIK
 Summary: Earned an SGPA of 7.95, with good grades in UNIX and Shell Programming Lab (A) and .NET Programming (A), but only managed a C in Machine Learning Lab.
 
+
 Roll Number: 22BQ1A42C4
 Name: PONNAPALLI CHANDRA KIRAN
 Summary: Achieved the second-highest SGPA of 8.79, with strong grades across most subjects, including A+ in UNIX and Shell Programming Lab and A in multiple theory subjects like Artificial Neural Networks.
+
 
 Roll Number: 22BQ1A42C5
 Name: PONNURU YASASWINI
 Summary: Attained the highest SGPA of 9.02, excelling in Image Processing using Python (A+), UNIX and Shell Programming Lab (A+), and .NET Programming (A+), while scoring C in Machine Learning.
 
+
 Roll Number: 22BQ1A42C6
 Name: PULIKONAM BHARGAV REDDY
 Summary: Secured an SGPA of 7.6, with A grades in Artificial Neural Networks and .NET Programming, but a low grade of D in Image Processing using Python.
+
 
 Roll Number: 22BQ1A42C7
 Name: PULIPAKA DHARANI
 Summary: Earned an SGPA of 7.95, with notable strengths in UNIX and Shell Programming Lab (A+) and Image Processing using Python (A), though struggled with C grades in Machine Learning Lab.
 
+
 Roll Number: 22BQ1A42C8
 Name: PULLA JOHN STEPHEN
 Summary: Displayed weaker performance, with low grades in core subjects like Machine Learning (E) and Computer Networks (E).
+
 
 Roll Number: 22BQ1A42E4
 Name: SHAIK SHAHANA
